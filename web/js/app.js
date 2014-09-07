@@ -87,6 +87,19 @@ storeApp.factory("DataService", function ($resource) {
 			
 			return rr.list();		
 	}
+        
+        var defaultStore = function() {
+            
+			var rr = $resource('/AngStoreWeb/StoreDefault', {}, {
+			  list: {method:'GET', params:{}, isArray:true}
+			});
+			
+			var products = rr.list();
+			var mySt = new store();
+			mySt.products = products;
+
+			return mySt;
+        }
 
     // return data object with store and cart
     return {
@@ -94,7 +107,8 @@ storeApp.factory("DataService", function ($resource) {
         cart: myCart,
 		storeByCategory: storeByCategory,
 		productBySku: productBySku,
-		categoryTree: categoryTree
+		categoryTree: categoryTree,
+                defaultStore: defaultStore
     };
 });
 

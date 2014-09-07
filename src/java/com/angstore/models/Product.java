@@ -48,8 +48,8 @@ public class Product implements Serializable {
     public Product(String sku, String name, String description, Double price, Collection<Category> categorys) {
         this.name = name;
         this.sku = sku;
+        this.description = description;
         this.price = price;
-        this.quantity = quantity;
         this.categorys = categorys;
     }
 

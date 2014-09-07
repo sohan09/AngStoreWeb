@@ -13,7 +13,7 @@ function RootController($scope, $routeParams, DataService) {
 function StoreController($scope, $routeParams, DataService) {
 
     // get store and cart from service
-    $scope.store = DataService.storeByCategory('Apple', 'Laptop');
+    $scope.store = DataService.defaultStore();
     $scope.cart = DataService.cart;
 
     // use routing to pick the selected product

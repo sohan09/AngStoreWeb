@@ -69,7 +69,7 @@
     </listener>
     <servlet-mapping>
         <servlet-name>ProductByCategoryNameAndParent</servlet-name>
-        <url-pattern>/productbycategorynameandparent</url-pattern>
+        <url-pattern>/ProductByCategoryNameAndParent</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CategoryTree</servlet-name>

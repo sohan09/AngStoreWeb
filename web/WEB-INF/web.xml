@@ -32,6 +32,10 @@
         <servlet-name>ProductBySku</servlet-name>
         <servlet-class>com.angstore.controllers.ProductBySku</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>StoreDefault</servlet-name>
+        <servlet-class>com.angstore.controllers.StoreDefault</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ProductServlet</servlet-name>
         <url-pattern>/product</url-pattern>
@@ -74,6 +78,10 @@
     <servlet-mapping>
         <servlet-name>ProductBySku</servlet-name>
         <url-pattern>/ProductBySku</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>StoreDefault</servlet-name>
+        <url-pattern>/StoreDefault</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

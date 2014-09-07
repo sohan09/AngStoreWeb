@@ -60,6 +60,20 @@ public class ProductService {
 
     }
 
+    public List<Product> productsByCategoryIsNull() {
+
+        EntityManager em = emf.createEntityManager();
+        try {
+
+            String q = "SELECT p from Product p WHERE p.category IS NULL";
+            TypedQuery<Product> tq = em.createQuery(q, Product.class);
+            return tq.getResultList();
+
+        } finally {
+            em.close();
+        }
+    }
+    
     public Product findByName(String name) {
 
         EntityManager em = emf.createEntityManager();

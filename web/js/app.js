@@ -61,8 +61,8 @@ storeApp.factory("DataService", function ($resource) {
     );
 	
 	var	storeByCategory = function(child, parent) {
-			var rr = $resource('/AngStoreWeb/StoreDefault', {}, {
-			  list: {method:'GET', params:{}, isArray:true}
+			var rr = $resource('/AngStoreWeb/ProductByCategoryNameAndParent', {}, {
+			  list: {method:'GET', params:{child: child, parent: parent}, isArray:true}
 			});
 			
 			var products = rr.list();

@@ -13,6 +13,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 
 /**
@@ -20,6 +22,7 @@ import javax.persistence.Temporal;
  * @author sohan
  */
 @Entity
+@Table(name = "u_order")
 public class Order implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -28,21 +31,22 @@ public class Order implements Serializable {
     private Long id;
 
     @Temporal(javax.persistence.TemporalType.TIMESTAMP)
-    Date date;
+    Date orderDate;
     private OrderStatus status;
     private long total;
 
     @ManyToOne
     private User user;
 
+    @OneToMany
     private List<OrderDetail> orderDetails;
 
-    public Date getDate() {
-        return date;
+    public Date getOrderDate() {
+        return orderDate;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setOrderDate(Date orderDate) {
+        this.orderDate = orderDate;
     }
 
     public OrderStatus getStatus() {

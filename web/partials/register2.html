@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Employee Form</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" type="text/css"
+	href="bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css"
+	href="font-awesome/css/font-awesome.min.css" />
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script type="text/javascript" src="js/register.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="page-header">
+			<h1>Employee Registration</h1>
+		</div>
+
+		<!-- Registration form - START -->
+		<div class="container">
+			<div class="row">
+				<form id="registerForm" role="form">
+					<div class="col-lg-6">
+						<div class="well well-sm">
+							<strong><span class="glyphicon glyphicon-asterisk"></span>Required
+								Field</strong>
+						</div>
+						<div class="form-group">
+							<label for="EmployeeID">User Email</label>
+							<div class="input-group">
+								<input type="text" class="form-control" name="User Email"
+									id="empid" placeholder="User Email" ng-model="info.empid" required> <span
+									class="input-group-addon"><span
+									class="glyphicon glyphicon-asterisk"></span></span>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="Password">Password</label>
+							<div class="input-group">
+								<input type="password" class="form-control" id="password"
+									name="password" placeholder="Password" ng-model="info.password"required> <span
+									class="input-group-addon"><span
+									class="glyphicon glyphicon-asterisk"></span></span>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="Employee Name">Employee Name</label>
+							<div class="input-group">
+								<input type="text" class="form-control" id="empname"
+									name="empname" placeholder="Employee Name" ng-model="info.empname" required> <span
+									class="input-group-addon"><span
+									class="glyphicon glyphicon-asterisk"></span></span>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="Gender">Gender</label>
+							<div></div>
+							<label class="radio-inline"> <input type="radio"
+								name="inlineRadioOptions" id="gender" ng-model="info.gender" value="Male"> Male
+							</label> <label class="radio-inline"> <input type="radio"
+								name="inlineRadioOptions" id="gender" ng-model="info.gender" value="Female">
+								Female
+							</label>
+						</div>
+						<div class="form-group">
+							<label for="Address">Address</label>
+							<div class="input-group">
+								<textarea name="Address" id="address" class="form-control"
+									rows="3" ng-model="info.address" required></textarea>
+								<span class="input-group-addon"></span>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="Phone Number">Phone/Mobile</label>
+							<div class="input-group">
+								<input type="text" class="form-control" id="phoneno"
+									name="phoneno" ng-model="info.phoneno" placeholder="Phone Number" required> <span
+									class="input-group-addon"></span>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="Designation">Designation</label>
+							<div class="input-group">
+								<select id="role" ng-model="info.role" name="role">
+									<option value="emp">Employee
+									<option value="rm">Resource Manager
+								</select>
+							</div>
+							<div></div>
+							<div class="form-group">
+								<label for="Salary">Salary</label>
+								<div class="input-group">
+									<input type="text" class="form-control" id="salary"
+										name="salary" ng-model="info.salary" placeholder="Salary" required> <span
+										class="input-group-addon"></span>
+								</div>
+							</div>
+						</div>
+
+						<input type="reset" name="reset" id="submit" value="Refresh"
+							class="btn btn-info pull-right"> <input type="submit"
+							name="submit" id="myButton" value="Submit"
+							class="btn btn-info pull-right">
+						<div>
+							If you are registered employee, please <a href="index.html">login</a>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	</div>
+	</div>
+	<!-- Registration form - END -->
+
+	</div>
+</body>
+</html>

@@ -1,0 +1,5 @@
+/Users/iraziud/Downloads/ShoppingCart/ShoppingCart/obj/Debug/.NETFramework,Version=v4.0.AssemblyAttribute.cs
+/Users/iraziud/Downloads/ShoppingCart/ShoppingCart/bin/ShoppingCart.dll.mdb
+/Users/iraziud/Downloads/ShoppingCart/ShoppingCart/bin/ShoppingCart.dll
+/Users/iraziud/Downloads/ShoppingCart/ShoppingCart/obj/Debug/ShoppingCart.dll
+/Users/iraziud/Downloads/ShoppingCart/ShoppingCart/obj/Debug/ShoppingCart.dll.mdb

@@ -182,7 +182,7 @@ public class InitAngStore {
 
     private void addAll(Product[] products, Category category) {
 
-        EntityTransaction tx = em.getTransaction();
+        EntityTransaction tx = em.getTransaction();     //Adding All
         try {
             tx.begin();
 

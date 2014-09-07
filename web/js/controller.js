@@ -5,6 +5,10 @@ function RootController($scope, $routeParams, DataService) {
 	$scope.categoryTree = DataService.categoryTree();
 
 	console.log("RootController");
+        
+        $scope.logout = function() {
+            
+        }
 }
 
 // the storeController contains two objects:
@@ -20,6 +24,17 @@ function StoreController($scope, $routeParams, DataService) {
     if ($routeParams.productSku != null) {
         $scope.product = $scope.store.getProduct($routeParams.productSku);
     }
+}
+
+function UserCtrl($scope, DataService) {
+    
+    $scope.login = function() {
+        
+    }
+    
+    $scope.register = function() {
+        
+    }    
 }
 
 function ProductByCategoryCtrl($scope, $routeParams, DataService) {

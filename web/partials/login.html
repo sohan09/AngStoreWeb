@@ -1,24 +1,60 @@
-<form class="form-horizontal">
 
-  <div class="control-group">
-    <label class="control-label" for="inputEmail">Email</label>
-    <div class="controls">
-      <input type="text" id="inputEmail" placeholder="Email">
-    </div>
-  </div>
-  
-  <div class="control-group">
-    <label class="control-label" for="inputPassword">Password</label>
-    <div class="controls">
-      <input type="password" id="inputPassword" placeholder="Password">
-    </div>
-  </div>
-  
-  <div class="control-group">
-    <div class="controls">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <form class="form-horizontal">
 
-      <button type="submit" class="btn">Sign in</button>
+                <div class="control-group">
+                    <label class="control-label" for="inputEmail">Email</label>
+                    <div class="controls">
+                        <input type="text" id="inputEmail" placeholder="Email" ng-model="user.email">
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="inputPassword">Password</label>
+                    <div class="controls">
+                        <input type="password" id="inputPassword" placeholder="Password" ng-model="user.password">
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <div class="controls">
+
+                        <button type="submit" class="btn" ng-click="login()">Sign in</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+
+        <div class="col-md-6">
+            <form class="form-horizontal">
+
+                <div class="control-group">
+                    <label class="control-label" for="inputEmail">Email</label>
+                    <div class="controls">
+                        <input type="text" id="inputEmail" placeholder="Email">
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="inputPassword">Password</label>
+                    <div class="controls">
+                        <input type="password" id="inputPassword" placeholder="Password">
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <div class="controls">
+
+                        <button type="submit" class="btn" ng-click="register()">Register</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
     </div>
-  </div>
-  
-</form>
+
+</div>
+

@@ -32,6 +32,16 @@ public class User implements Serializable {
     private Address billingAddress;
     private Address shippingAddress;
 
+    public User() {
+    }
+
+    public User(String email, String password) {
+        this.email = email;
+        this.password = password;
+    }
+    
+    
+
     public String getFirstName() {
         return firstName;
     }

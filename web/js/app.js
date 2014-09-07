@@ -13,10 +13,6 @@ var storeApp = angular.module('AngularStore', ['ngResource']).
                             templateUrl: 'partials/login.html',
                             controller: UserCtrl
                         }).
-                        when('/logout', {
-                            templateUrl: 'partials/login.html',
-                            controller: UserCtrl
-                        }).
                         when('/category/:parent/:child', {
                             templateUrl: 'partials/store.htm',
                             controller: ProductByCategoryCtrl
@@ -36,7 +32,7 @@ var storeApp = angular.module('AngularStore', ['ngResource']).
 
 // create a data service that provides a store and a shopping cart that
 // will be shared by all views (instead of creating fresh ones for each view).
-storeApp.factory("DataService", function($resource) {
+storeApp.factory("DataService", function($resource, $location) {
 
     // create store
     var myStore = new store();
@@ -111,12 +107,37 @@ storeApp.factory("DataService", function($resource) {
 
     var login = function(user) {
         var rr = $resource('/AngStoreWeb/Login', {}, {
-            list: {method: 'GET', params: {}, isArray: true}
+            list: {method: 'GET', params: {email: user.email, password: user.password}, isArray: false}
         });
+        var a_user = rr.list();
+        if(a_user == "failed") {
+            return false;
+        }
+        
+        localStorage['user'] = a_user;
+        $location.path('/store');
+    }
+
+    var logout = function() {
+        localStorage['user'] = null;
+
+        var rr = $resource('/AngStoreWeb/Logout', {}, {
+            list: {method: 'GET', params: {}, isArray: false}
+        });
+        rr.list();
+        
+        myCart.clearItems();
+        console.log("Logged Out");
+        $location.path('/login');
     }
     
-    var logout = function() {
+    var register = function (user) {
         
+        var rr = $resource('/AngStoreWeb/Register', {}, {
+            list: {method: 'GET', params: {email: user.email, password: user.password}, isArray: false}
+        });
+        var ans = rr.list();
+        $location.path('/login');
     }
 
     // return data object with store and cart
@@ -128,7 +149,8 @@ storeApp.factory("DataService", function($resource) {
         categoryTree: categoryTree,
         defaultStore: defaultStore,
         login: login,
-        logout: logout
+        logout: logout,
+        register: register
     };
 });
 

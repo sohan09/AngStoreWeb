@@ -31,7 +31,7 @@ public class UserService {
             String q = "SELECT u FROM User u WHERE u.email = :email AND u.password = :password";
             User user = em.createQuery(q, User.class)
                     .setParameter("email", email)
-                    .setParameter("password", password).getSingleResult();
+                    .setParameter("password", password).getResultList().get(0);
 
             return user;
 

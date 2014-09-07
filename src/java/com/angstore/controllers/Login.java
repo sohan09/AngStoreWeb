@@ -6,10 +6,13 @@
 package com.angstore.controllers;
 
 import com.angstore.models.User;
+import com.angstore.services.CategoryService;
+import com.angstore.services.ProductService;
 import com.angstore.services.UserService;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.persistence.EntityManagerFactory;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -23,7 +26,48 @@ import org.codehaus.jackson.map.ObjectMapper;
  */
 public class Login extends HttpServlet {
 
+
     private UserService userService;
+    private ProductService productService;
+    private CategoryService categoryService;
+
+    @Override
+    public void init() throws ServletException {
+        super.init(); //To change body of generated methods, choose Tools | Templates.
+
+        EntityManagerFactory emf = (EntityManagerFactory) getServletContext().getAttribute("emf");
+
+        if (productService == null) {
+            productService = new ProductService(emf);
+        }
+
+        if (categoryService == null) {
+            categoryService = new CategoryService(emf);
+        }
+        
+        if (userService == null) {
+            userService = new UserService(emf);
+        }
+    }
+
+    @Override
+    public void init(ServletConfig config) throws ServletException {
+        super.init(config); //To change body of generated methods, choose Tools | Templates.
+
+        EntityManagerFactory emf = (EntityManagerFactory) getServletContext().getAttribute("emf");
+
+        if (productService == null) {
+            productService = new ProductService(emf);
+        }
+
+        if (categoryService == null) {
+            categoryService = new CategoryService(emf);
+        }
+        
+        if (userService == null) {
+            userService = new UserService(emf);
+        }
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
 
@@ -49,13 +93,17 @@ public class Login extends HttpServlet {
         if (user == null) {
 
             ObjectMapper mapper = new ObjectMapper();
-            mapper.writeValue(response.getWriter(), "Unauthorized");
+            mapper.writeValue(response.getWriter(), "failed");
             return;
         }
         
         HttpSession session = request.getSession();
         
+        user.setPassword(null);
         session.setAttribute("user", user);
+        
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.writeValue(response.getWriter(), user);
     }
 
 }

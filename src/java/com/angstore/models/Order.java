@@ -39,7 +39,7 @@ public class Order implements Serializable {
     private User user;
 
     @OneToMany
-    private List<OrderDetail> orderDetails;
+    private List<OrderItem> orderDetails;
 
     public Date getOrderDate() {
         return orderDate;

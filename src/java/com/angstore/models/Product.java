@@ -44,6 +44,14 @@ public class Product implements Serializable {
         this.quantity = quantity;
         this.categorys = categorys;
     }
+    
+    public Product(String sku, String name, String description, Double price, Collection<Category> categorys) {
+        this.name = name;
+        this.sku = sku;
+        this.price = price;
+        this.quantity = quantity;
+        this.categorys = categorys;
+    }
 
     public Long getId() {
         return id;

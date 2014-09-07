@@ -75,7 +75,7 @@ public class ProductService {
         EntityManager em = emf.createEntityManager();
         try {
 
-            String q = "SELECT p from Product p WHERE p.category IS NULL";
+            String q = "SELECT p from Product p WHERE p.categorys IS NULL";
             TypedQuery<Product> tq = em.createQuery(q, Product.class);
             return tq.getResultList();
 

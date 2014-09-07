@@ -4,12 +4,11 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/D:/NetBeansProjects/AngStoreWeb/src/java/com/angstore/services/CategoryService.java</file>
-            <file>file:/D:/NetBeansProjects/AngStoreWeb/src/java/com/angstore/core/InitAngStore.java</file>
             <file>file:/D:/NetBeansProjects/AngStoreWeb/src/java/com/angstore/models/Product.java</file>
             <file>file:/D:/NetBeansProjects/AngStoreWeb/web/js/store.js</file>
+            <file>file:/D:/NetBeansProjects/AngStoreWeb/src/java/com/angstore/controllers/ProductServlet.java</file>
             <file>file:/D:/NetBeansProjects/AngStoreWeb/src/java/com/angstore/core/InitContext.java</file>
             <file>file:/D:/NetBeansProjects/AngStoreWeb/src/java/com/angstore/controllers/ProductByCategoryNameAndParent.java</file>
-            <file>file:/D:/NetBeansProjects/AngStoreWeb/src/conf/persistence.xml</file>
             <file>file:/D:/NetBeansProjects/AngStoreWeb/web/js/app.js</file>
             <file>file:/D:/NetBeansProjects/AngStoreWeb/src/java/com/angstore/services/ProductService.java</file>
             <file>file:/D:/NetBeansProjects/AngStoreWeb/src/java/com/angstore/controllers/StoreDefault.java</file>

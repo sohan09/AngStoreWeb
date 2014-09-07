@@ -43,6 +43,6 @@ public class InitContext implements ServletContextListener {
         //sce.getServletContext().setAttribute("emf", emf);
         
         InitAngStore ias = new InitAngStore(emf);
-        ias.init();
+//        ias.init();
     }
 }

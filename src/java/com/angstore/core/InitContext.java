@@ -40,7 +40,6 @@ public class InitContext implements ServletContextListener {
 
     public static void main(String[] args) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("AngStorePU");
-        //sce.getServletContext().setAttribute("emf", emf);
         
         InitAngStore ias = new InitAngStore(emf);
 //        ias.init();

@@ -59,6 +59,16 @@ public class ProductService {
         }
 
     }
+    
+    public List<Product> defaultProducts() {
+        EntityManager em = emf.createEntityManager();
+        
+        ArrayList<Product> products = new ArrayList<>();
+        for(int i = 26; i <= 31; i++) {
+            products.add(em.find(Product.class, i));
+        }
+        return products;
+    }
 
     public List<Product> productsByCategoryIsNull() {
 

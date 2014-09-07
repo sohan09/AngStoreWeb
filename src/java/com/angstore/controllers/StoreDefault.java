@@ -74,7 +74,7 @@ public class StoreDefault extends HttpServlet {
             throws ServletException, IOException {
         
         
-        List<Product> products = productService.productsByCategoryIsNull();
+        List<Product> products = productService.defaultProducts();
         
         ObjectMapper mapper = new ObjectMapper();
         

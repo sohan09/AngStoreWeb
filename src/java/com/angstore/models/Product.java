@@ -28,6 +28,8 @@ public class Product implements Serializable {
     @Column(unique = true)
     private String sku;
     private String name;
+    
+    @Column(length = 1000)
     private String description;
     private Double price;
     private Long quantity;

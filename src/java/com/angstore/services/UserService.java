@@ -38,6 +38,8 @@ public class UserService {
         } catch (PersistenceException e) {
 
             return null;
+        } catch (IndexOutOfBoundsException ex){
+            return null;
         } finally {
             em.close();
         }
@@ -50,6 +52,24 @@ public class UserService {
         try {
 
             User user = new User(email, pass);
+
+            tx.begin();
+            em.persist(user);
+            tx.commit();
+            return user;
+
+        } catch (PersistenceException e) {
+
+            return null;
+        } finally {
+            em.close();
+        }
+    }
+
+    public User register(User user) {
+        EntityManager em = emf.createEntityManager();
+        EntityTransaction tx = em.getTransaction();
+        try {
 
             tx.begin();
             em.persist(user);

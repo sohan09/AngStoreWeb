@@ -1,0 +1,98 @@
+<div class="span3">
+    
+    
+    <!-- start sidebar -->
+    <ul class="breadcrumb">
+        <li>Categories</span></li>
+    </ul>
+    
+    <div class="span3 product_list">
+
+        <ul class="nav" ng-show="categoryTree">
+            
+            <li ng-repeat="cat in categoryTree">
+                
+                <a class="active" href="#">{{cat.key}}</a>
+                
+                <ul>
+                    <li ng-repeat="val in cat.value"><a href="#/category/{{cat.key + '/' + val}}"> - {{val}}</a></li>
+                </ul>
+                
+            </li>
+
+        </ul>
+
+
+
+    </div><!-- end sidebar -->		</div>
+
+
+
+<div class="span9">
+
+    <div id="myCarousel" class="carousel slide">
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="css/images/carousel_1.jpg" alt="">
+                <div class="carousel-caption">
+                    <h4>First Thumbnail label</h4>
+                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                </div>
+
+            </div>
+            <div class="item">
+                <img src="css/images/carousel_2.jpg" alt="">
+                <div class="carousel-caption">
+                    <h4>Second Thumbnail label</h4>
+                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="css/images/carousel_3.jpg" alt="">
+                <div class="carousel-caption">
+                    <h4>Third Thumbnail label</h4>
+                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                </div>
+            </div>
+        </div>
+
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+    </div>
+</div>
+
+
+
+<div class="span7 popular_products">
+    
+    <h4>Popular products</h4><br />
+    <ul class="thumbnails">
+
+        <li class="span2" ng-repeat="product in store.products | orderBy:'name' | filter:search | limitTo:6">
+            <div class="thumbnail">
+                <a href="#/products/{{product.sku}}"><img ng-src="img/products/{{product.sku}}.jpg" alt="{{product.name}}" /></a>
+                <div class="caption">
+                    <a href="#/products/{{product.sku}}"> <h5>{{product.name}}</h5></a>  Price: {{product.price | currency}}<br /><br />
+                </div>
+            </div>
+        </li>
+
+
+    </ul>
+</div>
+<div class="span2">
+
+    <div class="roe">
+        <h4>Newsletter</h4><br />
+        <p>Sign up for our weekly newsletter and stay up-to-date with the latest offers, and newest products.</p>
+
+        <form class="form-search">
+            <input type="text" class="span2" placeholder="Enter your email" /><br /><br />
+            <button type="submit" class="btn pull-right">Subscribe</button>
+        </form>
+    </div><br /><br />
+    <a href="#"><img alt="" title="" src="css/images/paypal_mc_visa_amex_disc_150x139.gif" /></a>
+    <a href="#"><img alt="" src="css/images/bnr_nowAccepting_150x60.gif" /></a>
+
+</div>

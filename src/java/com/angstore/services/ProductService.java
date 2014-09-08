@@ -46,6 +46,24 @@ public class ProductService {
             em.close();
         }
     }
+    
+    public Long countAllByCategory(Category category) {
+
+        EntityManager em = emf.createEntityManager();
+        try {
+            
+            String q = "SELECT COUNT( p ) from Product p WHERE p.categorys=:cat";
+            TypedQuery<Long> tq = em.createQuery(q, Long.class)
+                    .setParameter("cat", category);
+            return tq.getSingleResult();
+
+        } catch (NullPointerException ex) {
+
+            return new Long(0);
+        } finally {
+            em.close();
+        }
+    }
 
     public Product find(long id) {
 

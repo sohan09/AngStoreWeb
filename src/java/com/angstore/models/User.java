@@ -6,16 +6,19 @@
 package com.angstore.models;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.Table;
 
 /**
  *
  * @author sohan
  */
-@Entity
+@Entity()
 public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -28,7 +31,15 @@ public class User implements Serializable {
     private String email;
     private String phone;
     private String password;
+    
+    private String city;
+    private String zip;
+    private String country;
+    
+    private String address1;
+    private String address2;
 
+    
     private Address billingAddress;
     private Address shippingAddress;
 
@@ -39,8 +50,23 @@ public class User implements Serializable {
         this.email = email;
         this.password = password;
     }
+
+    public User(String firstName, String lastName, String email, String phone, String password, String city, String zip, String country, String address1, String address2, Address billingAddress, Address shippingAddress) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.phone = phone;
+        this.password = password;
+        this.city = city;
+        this.zip = zip;
+        this.country = country;
+        this.address1 = address1;
+        this.address2 = address2;
+        this.billingAddress = billingAddress;
+        this.shippingAddress = shippingAddress;
+    }
     
-    
+
 
     public String getFirstName() {
         return firstName;

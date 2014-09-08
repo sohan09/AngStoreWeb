@@ -1,0 +1,91 @@
+<div class="row">
+    <div class="span3">
+
+        <!-- start sidebar -->
+        <ul class="breadcrumb">
+            <li>Categories</span></li>
+        </ul>
+        <div class="span3 product_list">
+
+
+            <ul class="nav" ng-show="categoryTree">
+
+                <li ng-repeat="cat in categoryTree">
+
+                    <a class="active" href="#">{{cat.key}}</a>
+
+                    <ul>
+                        <li ng-repeat="val in cat.value"><a href="#/category/{{cat.key + '/' + val}}"> - {{val}}</a></li>
+                    </ul>
+
+                </li>
+
+            </ul>
+
+        </div><!-- end sidebar -->
+
+    </div>
+
+
+    <div class="span9">
+
+
+        <ul class="breadcrumb">
+            <li>
+                <a href="#">Home</a> <span class="divider">/</span>
+            </li>
+            <li>
+                <a href="#">{{cct.parent}}</a> <span class="divider">/</span>
+            </li>
+            <li class="active">
+                <a href="#/category/{{cct.parent}}/{{cct.child}}">{{cct.child}}</a>
+            </li>
+        </ul>
+
+
+
+        <div class="container" ng-repeat="product in store.products | orderBy:'name' | filter:search | limitTo:100">
+
+        <div class="row" >
+            
+            <div class="span1">
+                <a href="#/products/{{product.sku}}"><img ng-src="img/products/{{product.sku}}.jpg" alt="{{product.name}}"></a>
+            </div>	 
+
+            <div class="span6">
+                <a href="#/products/{{product.sku}}"><h5>{{product.name}}</h5></a>
+                <p></p>
+            </div>	
+
+            <div class="span1">
+                <p>{{product.price | currency}}</p>
+            </div>	 
+
+            <div class="span2">
+                <p><span class="btn btn-primary" href="cart.html" ng-click="addItem(product.sku, product.name, product.price, 1)">Add to cart</span></p>
+            </div>
+
+
+        </div>
+        <hr />	
+
+        </div>
+
+
+
+<!--        <div class="pagination">
+            <ul>
+                <li><a href="#">Prev</a></li>
+                <li class="active">
+                    <a href="#">1</a>
+                </li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">Next</a></li>
+            </ul>
+        </div>-->
+
+    </div>
+
+</div>

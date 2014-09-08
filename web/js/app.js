@@ -5,28 +5,40 @@
 var storeApp = angular.module('AngularStore', ['ngResource']).
         config(['$routeProvider', function($routeProvider) {
                 $routeProvider.
-                        when('/store', {
-                            templateUrl: 'partials/store.htm',
-                            controller: StoreController
+                        when('/home', {
+                            templateUrl: 'partials2/home.html',
+                            controller: HomeController
                         }).
                         when('/login', {
-                            templateUrl: 'partials/login.html',
+                            templateUrl: 'partials2/login.html',
+                            controller: UserCtrl
+                        }).
+                        when('/register', {
+                            templateUrl: 'partials2/register.html',
                             controller: UserCtrl
                         }).
                         when('/category/:parent/:child', {
-                            templateUrl: 'partials/store.htm',
+                            templateUrl: 'partials2/list.html',
                             controller: ProductByCategoryCtrl
                         }).
                         when('/products/:productSku', {
-                            templateUrl: 'partials/product.htm',
+                            templateUrl: 'partials2/product.html',
                             controller: ProductCtrl
                         }).
                         when('/cart', {
-                            templateUrl: 'partials/shoppingCart.htm',
+                            templateUrl: 'partials2/cart.html',
+                            controller: CartCtrl
+                        }).
+                        when('/my_account', {
+                            templateUrl: 'partials2/my_account.html',
+                            controller: UserCtrl
+                        }).
+                        when('/checkout', {
+                            templateUrl: 'partials2/checkout.html',
                             controller: CartCtrl
                         }).
                         otherwise({
-                            redirectTo: '/store'
+                            redirectTo: '/home'
                         });
             }]);
 
@@ -65,13 +77,22 @@ storeApp.factory("DataService", function($resource, $location) {
     );
 
     var storeByCategory = function(child, parent) {
+
         var rr = $resource('/AngStoreWeb/ProductByCategoryNameAndParent', {}, {
             list: {method: 'GET', params: {child: child, parent: parent}, isArray: true}
         });
 
-        var products = rr.list();
         var mySt = new store();
+
+        var products = rr.list();
         mySt.products = products;
+
+
+        var xr = $resource('/AngStoreWeb/CoutProductByCategory', {}, {
+            list: {method: 'GET', params: {child: child, parent: parent}, isArray: false}
+        });
+
+        mySt.prod_map = xr.list();
 
         return mySt;
     }
@@ -110,31 +131,35 @@ storeApp.factory("DataService", function($resource, $location) {
             list: {method: 'GET', params: {email: user.email, password: user.password}, isArray: false}
         });
         var a_user = rr.list();
-        if(a_user == "failed") {
+
+        if (a_user == "failed") {
             return false;
         }
-        
-        localStorage['user'] = a_user;
-        $location.path('/store');
+
+        if (localStorage != null && JSON != null) {
+            localStorage["ang_user"] = JSON.stringify(a_user);
+        }
+
+        $location.path('/home');
     }
 
     var logout = function() {
-        localStorage['user'] = null;
+        localStorage['ang_user'] = null;
 
         var rr = $resource('/AngStoreWeb/Logout', {}, {
             list: {method: 'GET', params: {}, isArray: false}
         });
         rr.list();
-        
+
         myCart.clearItems();
         console.log("Logged Out");
-        $location.path('/login');
+        $location.path('/home');
     }
-    
-    var register = function (user) {
-        
+
+    var register = function(user) {
+
         var rr = $resource('/AngStoreWeb/Register', {}, {
-            list: {method: 'GET', params: {email: user.email, password: user.password}, isArray: false}
+            list: {method: 'GET', params: user, isArray: false}
         });
         var ans = rr.list();
         $location.path('/login');

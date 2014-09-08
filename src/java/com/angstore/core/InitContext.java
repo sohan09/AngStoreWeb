@@ -42,6 +42,6 @@ public class InitContext implements ServletContextListener {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("AngStorePU");
         
         InitAngStore ias = new InitAngStore(emf);
-//        ias.init();
+        ias.init();
     }
 }

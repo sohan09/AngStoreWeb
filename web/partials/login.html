@@ -1,6 +1,5 @@
 
 <div class="container-fluid">
-    
     <div class="row">
         <div class="col-md-6">
             <form class="form-horizontal">
@@ -28,24 +27,85 @@
 
             </form>
         </div>
+        
+        
+        
 
         <div class="col-md-6">
             <form class="form-horizontal">
+                
+                <div class="control-group">
+                    <label class="control-label" for="inputPassword">First Name</label>
+                    <div class="controls">
+                        <input type="text" id="inputPassword" placeholder="" ng-model="r_user.firstName">
+                    </div>
+                </div>
+                
+                <div class="control-group">
+                    <label class="control-label" for="inputPassword">Last Name</label>
+                    <div class="controls">
+                        <input type="text" id="inputPassword" placeholder="" ng-model="r_user.lastName">
+                    </div>
+                </div>
 
                 <div class="control-group">
                     <label class="control-label" for="inputEmail">Email</label>
                     <div class="controls">
-                        <input type="text" id="inputEmail" placeholder="Email" ng-model="user.email">
+                        <input type="text" id="inputEmail" placeholder="" ng-model="r_user.email">
                     </div>
                 </div>
 
                 <div class="control-group">
                     <label class="control-label" for="inputPassword">Password</label>
                     <div class="controls">
-                        <input type="password" id="inputPassword" placeholder="Password" ng-model="user.password">
+                        <input type="password" id="inputPassword" placeholder="" ng-model="r_user.password">
+                    </div>
+                </div>
+                
+                <div class="control-group">
+                    <label class="control-label" for="inputPassword">Phone</label>
+                    <div class="controls">
+                        <input type="text" id="inputPassword" placeholder="" ng-model="r_user.phone">
+                    </div>
+                </div>
+                
+                <h3>Address</h3>
+                
+                <div class="control-group">
+                    <label class="control-label" for="inputPassword">Address1</label>
+                    <div class="controls">
+                        <input type="text" id="inputPassword" placeholder="" ng-model="r_user.address1">
+                    </div>
+                </div>
+                
+                <div class="control-group">
+                    <label class="control-label" for="inputPassword">Address2</label>
+                    <div class="controls">
+                        <input type="text" id="inputPassword" placeholder="" ng-model="r_user.address2">
+                    </div>
+                </div>
+                
+                <div class="control-group">
+                    <label class="control-label" for="inputPassword">City</label>
+                    <div class="controls">
+                        <input type="text" id="inputPassword" placeholder="" ng-model="r_user.city">
                     </div>
                 </div>
 
+                <div class="control-group">
+                    <label class="control-label" for="inputPassword">Zip</label>
+                    <div class="controls">
+                        <input type="text" id="inputPassword" placeholder="" ng-model="r_user.zip">
+                    </div>
+                </div>
+                
+                <div class="control-group">
+                    <label class="control-label" for="inputPassword">Country</label>
+                    <div class="controls">
+                        <input type="text" id="inputPassword" placeholder="" ng-model="r_user.country">
+                    </div>
+                </div>
+                
                 <div class="control-group">
                     <div class="controls">
 
@@ -55,6 +115,8 @@
 
             </form>
         </div>
+        
+        
     </div>
 
 </div>

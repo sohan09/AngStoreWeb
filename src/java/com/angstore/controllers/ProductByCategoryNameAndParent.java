@@ -12,7 +12,9 @@ import com.angstore.services.CategoryService;
 import com.angstore.services.ProductService;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.persistence.EntityManagerFactory;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -82,11 +84,23 @@ public class ProductByCategoryNameAndParent extends HttpServlet {
         
         int offset = parseInt(request.getParameter("page") + "");
         int max = parseInt(request.getParameter("size") + "");
-        max = Math.min(max, 100);
+        max = Math.min(max, 100) == 0 ? 100 : max;
+        
+        Map m = new HashMap<String, Object>();
+        
+        m.put("page", offset);
+        m.put("size", max);
         
         offset = (offset - 1) * max;
+        offset = offset < 0 ? 0 : offset;
+        
         
         List<Product> products = productService.findAllByCategory(category, offset, max);
+        long total = productService.countAllByCategory(category);
+        
+        
+        m.put("total", total / max);
+        m.put("products", products);
         
         response.addHeader("Access-Control-Allow-Origin", "*");
         ObjectMapper mapper = new ObjectMapper();

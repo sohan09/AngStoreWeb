@@ -11,6 +11,7 @@ import com.angstore.services.ProductService;
 import com.angstore.services.UserService;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.lang.reflect.Field;
 import javax.persistence.EntityManagerFactory;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -84,11 +85,31 @@ public class Register extends HttpServlet {
 
         String email = request.getParameter("email");
         String pass = request.getParameter("password");
+        
+        String firstName = request.getParameter("firstName");
+        String lastName = request.getParameter("lastName");
+        String phone = request.getParameter("phone");
+        String city = request.getParameter("city");
+        String country = request.getParameter("country");
+        String zip = request.getParameter("zip");
+        
+        String address1 = request.getParameter("address1");
+        String address2 = request.getParameter("address2");
+        
+        User user = new User(firstName, lastName, email, phone, pass, city, zip, country, address1, address2, null, null);
 
-        User user = userService.register(email, pass);
+        user = userService.register(user);
 
         ObjectMapper mapper = new ObjectMapper();
-        mapper.writeValue(response.getWriter(), "Registered");
+        mapper.writeValue(response.getWriter(), "success");
 
+    }
+    
+    public static void main(String[] args) {
+        Field[] fields = User.class.getDeclaredFields();
+        
+        for(Field f : fields) {
+            System.out.println(f.getName());
+        }
     }
 }

@@ -114,8 +114,14 @@ function ProductCtrl($scope, $routeParams, DataService) {
     $scope.c_cart.totalItem = $scope.cart.getTotalCount();
     $scope.c_cart.totalPrice = $scope.cart.getTotalPrice();
 
-    console.log("ProductByCategoryCtrl : " + $routeParams.productSku);
-    // use routing to pick the selected product
+
+    $scope.addItem = function(sku, name, price, quantity) {
+
+        $scope.cart.addItem(sku, name, price, quantity);
+        $scope.c_cart.totalItem = $scope.cart.getTotalCount();
+        $scope.c_cart.totalPrice = $scope.cart.getTotalPrice();
+    }
+
     if ($routeParams.productSku != null) {
         $scope.product = DataService.productBySku($routeParams.productSku);
     }
@@ -149,6 +155,59 @@ function CartCtrl($scope, $routeParams, DataService) {
     }
 }
 
+
+function CheckoutCtrl($scope, $routeParams, DataService) {
+    lglg($scope);
+
+
+    // get store and cart from service
+    $scope.store = DataService.store;
+    $scope.cart = DataService.cart;
+
+
+    $scope.c_cart.totalItem = $scope.cart.getTotalCount();
+    $scope.c_cart.totalPrice = $scope.cart.getTotalPrice();
+
+    $scope.b_dtls = {};
+    $scope.s_dtls = {};
+
+
+    this.userCheckout = function() {
+        
+    }
+
+
+    this.registerCheckout = function() {
+        
+    }
+
+    this.guestCheckout = function() {
+        
+    }
+
+    $scope.checkout = function() {
+
+        if (localStorage != null && JSON != null) {
+            
+            var user = localStorage['ang_user'];
+            
+            if (!(user == "null" || user == null || user == undefined)) {
+                
+                this.userCheckout();
+                
+            } else if($scope.register) {
+                
+                this.registerCheckout();
+                
+            } else {
+                
+                this.guestCheckout();
+            }
+            
+        }
+
+    }
+}
 
 
 function lglg($scope) {

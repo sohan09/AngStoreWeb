@@ -5,10 +5,10 @@
                 <a href="#">Home</a> <span class="divider">/</span>
             </li>
             <li>
-                <a href="cart.html">Shopping Cart</a> <span class="divider">/</span>
+                <a href="#/cart">Shopping Cart</a> <span class="divider">/</span>
             </li>
             <li class="active">
-                <a href="/">Checkout</a>
+                <a href="#/checkout">Checkout</a>
             </li>
         </ul>
     </div>
@@ -19,14 +19,19 @@
 
 
         <div class="accordion" id="accordion2">
-            <div class="accordion-group">
+            
+            
+            <div ng-show="user.loggedOut == 'true'" class="accordion-group">
+                
                 <div class="accordion-heading">
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
                         <h3>Step 1: Checkout Options</h3>
                     </a>
                 </div>
+                
                 <div id="collapseOne" class="accordion-body collapse in">
                     <div class="accordion-inner">
+                        
 
                         <div class="span6 no_margin_left">
                             <h4>New Customer</h4>
@@ -34,13 +39,18 @@
 
                             <form class="">
                                 <fieldset>
-                                    <input type="radio" value="option1" name="optionsCheckboxList1"> Register Account <br />
-                                    <input type="radio" value="option2" name="optionsCheckboxList1"> Guest Checkout <br /><br /><br /><br /><br />
+                                    <input type="radio" ng-model="register"> Register Account <br />
+                                    <input type="radio" ng-model="guest"> Guest Checkout <br />
+                                    <br /><br /><br /><br />
+                                    
                                     <a class="btn btn-primary pull-right" href="#collapse2" data-toggle="collapse" data-parent="#collapse2">Continue</a>
 
                                 </fieldset>
                             </form>
                         </div>
+                        
+                        
+                        
                         <div class="span5">
                             <h4>Registered Customers</h4>
                             <p>If you have an account with us, please log in.</p>
@@ -60,7 +70,7 @@
                                         </div>
                                     </div>
 
-                                    <a class="btn btn-primary pull-right" href="#collapse2">Continue</a>
+                                    <a class="btn btn-primary pull-right" href="#collapse2" data-parent="#collapse2">Continue</a>
 
                                 </fieldset>
                             </form>
@@ -70,6 +80,8 @@
                     </div>
                 </div>
             </div>
+            
+            
 
             <div class="accordion-group">
                 <div class="accordion-heading">
@@ -142,7 +154,7 @@
                             </div>
                         </div>
                         <div class="span11 no_margin_left">
-                            <br /><a class="btn btn-primary pull-right" href="#collapse3">Continue</a><br /><br /><br />
+                            <br /><a class="btn btn-primary pull-right" href="#collapse3" data-parent="#collapse3">Continue</a><br /><br /><br />
                         </div>
                     </div>
 
@@ -221,7 +233,7 @@
                             </div>
                         </div>
                         <div class="span11 no_margin_left">
-                            <br /><a class="btn btn-primary pull-right" href="#collapse3">Continue</a><br /><br /><br />
+                            <br /><a class="btn btn-primary pull-right" href="#collapse3" data-parent="#accordion3">Continue</a><br /><br /><br />
                         </div>
                     </div>
                 </div>
@@ -246,7 +258,7 @@
                             </div>
                         </div>
                         <div class="span11 no_margin_left">
-                            <br /><a class="btn btn-primary pull-right" href="#collapse3">Confirm order</a><br /><br /><br />
+                            <br /><a class="btn btn-primary pull-right" href="#" ng-click="checkout()">Confirm order</a><br /><br /><br />
                         </div>				</div>
                 </div>
             </div>

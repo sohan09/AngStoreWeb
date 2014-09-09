@@ -52,6 +52,10 @@
         <servlet-name>CoutProductByCategory</servlet-name>
         <servlet-class>com.angstore.controllers.CoutProductByCategory</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CreateOrder</servlet-name>
+        <servlet-class>com.angstore.controllers.CreateOrder</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ProductServlet</servlet-name>
         <url-pattern>/product</url-pattern>
@@ -114,6 +118,10 @@
     <servlet-mapping>
         <servlet-name>CoutProductByCategory</servlet-name>
         <url-pattern>/CoutProductByCategory</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CreateOrder</servlet-name>
+        <url-pattern>/CreateOrder</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

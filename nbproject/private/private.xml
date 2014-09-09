@@ -3,32 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/NetBeansProjects/AngStoreWeb/src/java/com/angstore/controllers/CoutProductByCategory.java</file>
-            <file>file:/D:/NetBeansProjects/AngStoreWeb/web/js/store.js</file>
-            <file>file:/D:/NetBeansProjects/AngStoreWeb/web/WEB-INF/web.xml</file>
-            <file>file:/D:/NetBeansProjects/AngStoreWeb/src/java/com/angstore/controllers/Register.java</file>
-            <file>file:/D:/NetBeansProjects/AngStoreWeb/web/css/main.css</file>
+            <file>file:/D:/NetBeansProjects/AngStoreWeb/web/partials2/register.html</file>
+            <file>file:/D:/NetBeansProjects/AngStoreWeb/web/index.html</file>
+            <file>file:/D:/NetBeansProjects/AngStoreWeb/web/partials2/home.html</file>
+            <file>file:/D:/NetBeansProjects/AngStoreWeb/web/partials2/cart.html</file>
             <file>file:/D:/NetBeansProjects/AngStoreWeb/web/partials2/list.html</file>
             <file>file:/D:/NetBeansProjects/AngStoreWeb/web/partials2/checkout.html</file>
-            <file>file:/D:/NetBeansProjects/AngStoreWeb/web/partials2/product.html</file>
-            <file>file:/D:/NetBeansProjects/AngStoreWeb/src/java/com/angstore/controllers/Login.java</file>
-            <file>file:/D:/NetBeansProjects/AngStoreWeb/web/partials/login.html</file>
-            <file>file:/D:/NetBeansProjects/AngStoreWeb/web/js/shoppingCart.js</file>
-            <file>file:/D:/NetBeansProjects/AngStoreWeb/src/java/com/angstore/core/InitContext.java</file>
-            <file>file:/D:/NetBeansProjects/AngStoreWeb/web/partials2/login.html</file>
-            <file>file:/D:/NetBeansProjects/AngStoreWeb/web/partials2/home.html</file>
             <file>file:/D:/NetBeansProjects/AngStoreWeb/web/js/app.js</file>
-            <file>file:/D:/NetBeansProjects/AngStoreWeb/web/partials2/register.html</file>
-            <file>file:/D:/NetBeansProjects/AngStoreWeb/web/partials/shoppingCart.htm</file>
-            <file>file:/D:/NetBeansProjects/AngStoreWeb/web/index.html</file>
-            <file>file:/D:/NetBeansProjects/AngStoreWeb/web/partials2/cart.html</file>
-            <file>file:/D:/NetBeansProjects/AngStoreWeb/web/partials2/my_account.html</file>
-            <file>file:/D:/NetBeansProjects/AngStoreWeb/src/java/com/angstore/core/InitAngStore.java</file>
-            <file>file:/D:/NetBeansProjects/AngStoreWeb/src/java/com/angstore/services/UserService.java</file>
-            <file>file:/D:/NetBeansProjects/AngStoreWeb/src/java/com/angstore/controllers/ProductByCategoryNameAndParent.java</file>
-            <file>file:/D:/NetBeansProjects/AngStoreWeb/web/partials/product.htm</file>
+            <file>file:/D:/NetBeansProjects/AngStoreWeb/web/partials2/product.html</file>
             <file>file:/D:/NetBeansProjects/AngStoreWeb/web/js/controller.js</file>
-            <file>file:/D:/NetBeansProjects/AngStoreWeb/src/java/com/angstore/services/ProductService.java</file>
+            <file>file:/D:/NetBeansProjects/AngStoreWeb/web/partials2/my_account.html</file>
+            <file>file:/D:/NetBeansProjects/AngStoreWeb/web/js/product.js</file>
         </group>
     </open-files>
 </project-private>

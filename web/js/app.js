@@ -35,7 +35,7 @@ var storeApp = angular.module('AngularStore', ['ngResource']).
                         }).
                         when('/checkout', {
                             templateUrl: 'partials2/checkout.html',
-                            controller: CartCtrl
+                            controller: CheckoutCtrl
                         }).
                         otherwise({
                             redirectTo: '/home'
@@ -163,6 +163,10 @@ storeApp.factory("DataService", function($resource, $location) {
         });
         var ans = rr.list();
         $location.path('/login');
+    }
+    
+    var checkout = function (user, b_dtls, s_dtls, paymentMethod, items) {
+        
     }
 
     // return data object with store and cart

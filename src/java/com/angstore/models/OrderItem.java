@@ -28,8 +28,6 @@ public class OrderItem implements Serializable {
     private String productSku;
     private double price;
     private int quantity;
-    private double total;
-    private String coupon;
 
     public long getProductId() {
         return productId;
@@ -69,22 +67,6 @@ public class OrderItem implements Serializable {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
-    }
-
-    public double getTotal() {
-        return total;
-    }
-
-    public void setTotal(double total) {
-        this.total = total;
-    }
-
-    public String getCoupon() {
-        return coupon;
-    }
-
-    public void setCoupon(String coupon) {
-        this.coupon = coupon;
     }
 
     public Long getId() {
